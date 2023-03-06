@@ -14,7 +14,7 @@ func mkdir(dir string) {
 }
 
 // This function setup a directory and file which specifies by user
-func setup(dir string, template_name string, mainFileName string){
+func setup(dir string, template_name string, mainFileName string) {
 	// Checking about the folder
 	mkdir(dir)
 	// Loading template
@@ -57,15 +57,15 @@ func Python(dir string) {
 // It is perfect condition. it is working
 func Go(dir string) {
 	// creating go mod file
-  var d = dir
-  setup(d, "templates/go.txt", "hello_world.go")
+	var d = dir
+	setup(d, "templates/go.txt", "hello_world.go")
 	var name string
 	fmt.Print("Enter module name: ")
 	fmt.Scanln(&name)
 	f, err := os.Create(dir + "/go.mod")
 	if err != nil {
 		println(err.Error())
-		return 
+		return
 
 	}
 	defer f.Close()
@@ -80,7 +80,7 @@ func Go(dir string) {
 
 	var text = fmt.Sprintf("module %v \n\ngo %v\n", name, version)
 	f.WriteString(text)
-	return 
+	return
 }
 
 func Cxx(dir string) {
