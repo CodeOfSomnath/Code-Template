@@ -66,7 +66,6 @@ func Go(dir string) {
 	if err != nil {
 		println(err.Error())
 		return
-
 	}
 	defer f.Close()
 	version := strings.TrimPrefix(runtime.Version(), "go")
@@ -84,7 +83,6 @@ func Go(dir string) {
 }
 
 func Cxx(dir string) {
-
 	setup(dir, "templates/cpp.txt", "main.cpp")
 }
 func Html(dir string) {
